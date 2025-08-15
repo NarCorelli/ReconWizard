@@ -1,0 +1,150 @@
+# Recon Report: example.com
+
+**Scan Time:** 20250815-135102 UTC
+
+## Resolved IP
+```
+{
+  "domain": "example.com",
+  "ip": "23.215.0.138"
+}
+```
+
+## DNS Records
+```
+{
+  "A": [
+    "96.7.128.198",
+    "96.7.128.175",
+    "23.215.0.138",
+    "23.215.0.136",
+    "23.192.228.84",
+    "23.192.228.80"
+  ],
+  "AAAA": [
+    "2600:1406:bc00:53::b81e:94c8",
+    "2600:1406:3a00:21::173e:2e66",
+    "2600:1406:3a00:21::173e:2e65",
+    "2600:1408:ec00:36::1736:7f31",
+    "2600:1408:ec00:36::1736:7f24",
+    "2600:1406:bc00:53::b81e:94ce"
+  ],
+  "MX": [
+    "0 ."
+  ],
+  "NS": [
+    "a.iana-servers.net.",
+    "b.iana-servers.net."
+  ],
+  "TXT": [
+    "\"_k2n1y4vw3qtb4skdx9e7dxt97qrmmq9\"",
+    "\"v=spf1 -all\""
+  ]
+}
+```
+
+## GeoIP Info
+```
+{
+  "ip": "23.192.228.80",
+  "country": "United States",
+  "region": "California",
+  "city": "San Jose",
+  "isp": "Akamai International B.V.",
+  "organization": "Akamai Technologies, Inc.",
+  "latitude": 37.3388,
+  "longitude": -121.8916
+}
+```
+
+## HTTP Info
+```
+{
+  "status_code": 200,
+  "final_url": "http://example.com/",
+  "headers": {
+    "Accept-Ranges": "bytes",
+    "Content-Type": "text/html",
+    "ETag": "\"84238dfc8092e5d9c0dac8ef93371a07:1736799080.121134\"",
+    "Last-Modified": "Mon, 13 Jan 2025 20:11:20 GMT",
+    "Vary": "Accept-Encoding",
+    "Content-Encoding": "gzip",
+    "Content-Length": "648",
+    "Cache-Control": "max-age=1420",
+    "Date": "Fri, 15 Aug 2025 13:51:13 GMT",
+    "Connection": "keep-alive"
+  },
+  "key_headers": {
+    "server": null,
+    "x_powered_by": null,
+    "content_type": "text/html",
+    "content_security_policy": null,
+    "strict_transport_security": null,
+    "x_frame_options": null,
+    "x_content_type_options": null,
+    "referrer_policy": null,
+    "cache_control": "max-age=1420"
+  },
+  "cookies": [],
+  "favicon_hash": null
+}
+```
+
+## Open Ports
+```
+{
+  "open_ports": [
+    {
+      "port": "80",
+      "protocol": "tcp",
+      "service": "http",
+      "product": null,
+      "version": null
+    },
+    {
+      "port": "443",
+      "protocol": "tcp",
+      "service": "https",
+      "product": null,
+      "version": null
+    }
+  ]
+}
+```
+
+## WHOIS Info
+```
+{
+  "domain": "EXAMPLE.COM",
+  "registrar": "RESERVED-Internet Assigned Numbers Authority",
+  "status": [
+    "clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited",
+    "clientTransferProhibited https://icann.org/epp#clientTransferProhibited",
+    "clientUpdateProhibited https://icann.org/epp#clientUpdateProhibited"
+  ],
+  "creation_date": "1995-08-14T04:00:00",
+  "updated_date": "2025-08-14T07:01:39",
+  "expiration_date": "2026-08-13T04:00:00",
+  "name_servers": [
+    "a.iana-servers.net",
+    "b.iana-servers.net"
+  ],
+  "emails": []
+}
+```
+
+## OSINT Profile
+```
+{
+  "ssl_subdomains": {
+    "error": "HTTPSConnectionPool(host='crt.sh', port=443): Read timed out. (read timeout=15)"
+  },
+  "github_search": {
+    "error": "GitHub API status 401"
+  },
+  "hibp": {
+    "hibp": "Check example.com on https://haveibeenpwned.com"
+  }
+}
+```
+

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recon Report - larepublica.com</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { background-color: #f8f9fa; }
+        .header { background: #343a40; color: white; padding: 15px; }
+        .section { background: white; padding: 15px; margin-bottom: 20px; border-radius: 8px; }
+        pre { background: #eee; padding: 10px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Recon Report: larepublica.com</h1>
+        <p>Scan Time: 20250815-135227</p>
+    </div>
+    <div class="container mt-4">
+        
+        <div class="section">
+            <h3>Resolved IP</h3>
+            <pre>{
+  "domain": "larepublica.com",
+  "ip": "15.197.148.33"
+}</pre>
+        </div>
+        
+        <div class="section">
+            <h3>DNS Records</h3>
+            <pre>{
+  "A": [
+    "3.33.130.190",
+    "15.197.148.33"
+  ],
+  "AAAA": [],
+  "MX": [
+    "5 alt2.aspmx.l.google.com.",
+    "1 aspmx.l.google.com.",
+    "10 alt3.aspmx.l.google.com.",
+    "10 alt4.aspmx.l.google.com.",
+    "5 alt1.aspmx.l.google.com."
+  ],
+  "NS": [
+    "ns52.domaincontrol.com.",
+    "ns51.domaincontrol.com."
+  ],
+  "TXT": [
+    "\"v=spf1 include:dc-aa8e722993._spfm.larepublica.com ~all\""
+  ]
+}</pre>
+        </div>
+        
+        <div class="section">
+            <h3>GeoIP Info</h3>
+            <pre>{
+  "city": "Toronto",
+  "country": "Canada",
+  "ip": "3.33.130.190",
+  "isp": "Amazon.com, Inc.",
+  "latitude": 43.6532,
+  "longitude": -79.3832,
+  "organization": "AWS Global Accelerator (GLOBAL)",
+  "region": "Ontario"
+}</pre>
+        </div>
+        
+        <div class="section">
+            <h3>HTTP Info</h3>
+            <pre>{
+  "cookies": [],
+  "favicon_hash": null,
+  "final_url": "http://larepublica.com/",
+  "headers": {
+    "content-length": "114",
+    "content-type": "text/html",
+    "date": "Fri, 15 Aug 2025 13:52:28 GMT"
+  },
+  "key_headers": {
+    "cache_control": null,
+    "content_security_policy": null,
+    "content_type": "text/html",
+    "referrer_policy": null,
+    "server": null,
+    "strict_transport_security": null,
+    "x_content_type_options": null,
+    "x_frame_options": null,
+    "x_powered_by": null
+  },
+  "status_code": 200
+}</pre>
+        </div>
+        
+        <div class="section">
+            <h3>Open Ports</h3>
+            <pre>{
+  "open_ports": [
+    {
+      "port": "80",
+      "product": null,
+      "protocol": "tcp",
+      "service": "http",
+      "version": null
+    },
+    {
+      "port": "443",
+      "product": null,
+      "protocol": "tcp",
+      "service": "https",
+      "version": null
+    }
+  ]
+}</pre>
+        </div>
+        
+        <div class="section">
+            <h3>WHOIS Info</h3>
+            <pre>{
+  "creation_date": "1998-11-10T00:00:00",
+  "domain": "LAREPUBLICA.COM",
+  "emails": [
+    "abuse@godaddy.com"
+  ],
+  "expiration_date": "2030-11-09T00:00:00",
+  "name_servers": [
+    "ns51.domaincontrol.com",
+    "ns52.domaincontrol.com"
+  ],
+  "registrar": "GoDaddy.com, LLC",
+  "status": [
+    "clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited",
+    "clientRenewProhibited https://icann.org/epp#clientRenewProhibited",
+    "clientTransferProhibited https://icann.org/epp#clientTransferProhibited",
+    "clientUpdateProhibited https://icann.org/epp#clientUpdateProhibited"
+  ],
+  "updated_date": "2022-09-23T15:12:06"
+}</pre>
+        </div>
+        
+        <div class="section">
+            <h3>OSINT Profile</h3>
+            <pre>{
+  "github_search": {
+    "error": "GitHub API status 401"
+  },
+  "hibp": {
+    "hibp": "Check larepublica.com on https://haveibeenpwned.com"
+  },
+  "ssl_subdomains": {
+    "subdomains": [
+      "*.larepublica.com\nlarepublica.com",
+      "autodiscover.larepublica.com\ncpanel.larepublica.com\nlarepublica.com\nmail.larepublica.com\nwebdisk.larepublica.com\nwebmail.larepublica.com\nwww.larepublica.com",
+      "larepublica.com",
+      "larepublica.com\nwww.larepublica.com",
+      "www.larepublica.com"
+    ]
+  }
+}</pre>
+        </div>
+        
+
+        <div class="section">
+            <h3>Open Ports Chart</h3>
+            <canvas id="portsChart"></canvas>
+        </div>
+    </div>
+
+    <script>
+        const portsData = {"open_ports": [{"port": "80", "product": null, "protocol": "tcp", "service": "http", "version": null}, {"port": "443", "product": null, "protocol": "tcp", "service": "https", "version": null}]};
+        const labels = Object.keys(portsData);
+        const values = Object.values(portsData).map(v => v ? 1 : 0);
+
+        new Chart(document.getElementById('portsChart'), {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Open (1) / Closed (0)',
+                    data: values,
+                    backgroundColor: values.map(v => v ? 'rgba(255, 99, 132, 0.7)' : 'rgba(54, 162, 235, 0.7)')
+                }]
+            },
+            options: {
+                scales: {
+                    y: { beginAtZero: true, ticks: { stepSize: 1 } }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
